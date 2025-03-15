@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon and Twinkling Stars</title>
+    <link rel="stylesheet" href="gok.css" />
+  </head>
+  <body>
+    <div class="sky">
+      <div class="moon"></div>
+      <div class="stars"></div>
+    </div>
+
+    <audio id="backgroundMusic" autoplay loop>
+      <source src="romantic.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Prompt Container -->
+    <div class="prompt-container" id="prompt-container">
+      <div class="prompt" id="prompt1">
+        <p>Anjayy keren gaa kul?</p>
+        <button onclick="handlePrompt1('yes')">Yes</button>
+      </div>
+      <div class="prompt" id="prompt2">
+        <p>Ini lah gabut"an nak programmer wkwk</p>
+        <button onclick="handlePrompt2('yes')">Yes</button>
+      </div>
+      <div class="prompt" id="prompt3">
+        <p>rate dulu kul</p>
+        <input type="number" min="1" max="100" id="rating" />
+        <button onclick="submitRating()">Submit</button>
+      </div>
+      <div class="prompt" id="prompt4">
+        <p>Ntr ku bawakin oleh" meteran dari Medan yeee</p>
+        <button onclick="handlePrompt3('yes')">Yes</button>
+      </div>
+      <div class="prompt" id="prompt5">
+        <p>Bocil kul kul</p>
+        <button onclick="handlePrompt4()">Yes</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="music.js"></script>
+  </body>
+</html>

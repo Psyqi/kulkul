@@ -1,0 +1,134 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #ffffff 30%, rgba(255, 255, 255, 0.6) 60%, rgba(255, 255, 255, 0.2) 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.8), 0 0 120px rgba(255, 255, 255, 0.6), 0 0 180px rgba(255, 255, 255, 0.4);
+  filter: blur(2px);
+}
+
+.moon::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -20%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -20%) rotate(360deg);
+  }
+}
+
+/* Efek Bintang */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+  opacity: 0;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Prompt Styles */
+.prompt-container {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideUp 2s forwards;
+}
+
+.prompt {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: none;
+}
+
+.prompt p {
+  margin: 0 0 10px;
+}
+
+.prompt button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1e90ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.prompt input[type='number'] {
+  width: 50px;
+  padding: 5px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}
